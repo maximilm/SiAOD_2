@@ -1,16 +1,15 @@
 ﻿#include <iostream>
 #include <vector>
-#include "genText.h"
-#include "Polis.h"
+#include "genFile.h"
 #include "HashTable.h"
 using namespace std;
 int main()
 {
-    setlocale(LC_ALL, "russian");
+    setlocale(LC_ALL, "russian"); 
     int capacity;
     cout << "Введите количество страховых полисов в файле: ";
     cin >> capacity;
-    genText(capacity);
+    genFile(capacity);
     HashTable table;
     int comand; 
     cout << "1 - поиск записи по ключу;" << endl;

@@ -21,7 +21,7 @@
     <ClCompile Include="HashTable.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="genText.cpp">
+    <ClCompile Include="GenFile.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,7 +32,7 @@
     <ClInclude Include="Polis.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="genText.h">
+    <ClInclude Include="GenFile.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

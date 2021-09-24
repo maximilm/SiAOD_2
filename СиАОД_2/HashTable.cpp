@@ -10,7 +10,7 @@ void HashTable::reHash() {
 
 void HashTable::deleteNote(string key) {
 	long hashIndex = hash(key);
-	list <Polis*> ::iterator it = a[hashIndex].begin();
+	it = a[hashIndex].begin();
 	
 	if (it == a[hashIndex].end())
 	{
@@ -50,7 +50,7 @@ void HashTable::deleteNote(string key) {
 
 Polis* HashTable::find(string key) {
 	long hashIndex = hash(key);
-	list <Polis*> ::iterator it = a[hashIndex].begin();
+	it = a[hashIndex].begin();
 	while (it != a[hashIndex].end()) {
 		if ((*it)->getNum() == key) 
 			return (*it);
@@ -116,7 +116,6 @@ HashTable::HashTable() {
 };
 
 void HashTable::outTable() {
-	list <Polis*> ::iterator it;
 	for (int i = 0; i < sizeTable; i++) { // пройдем весь вектор
 		if (!a[i].empty()) // если список не пуст 
 		{
