@@ -11,7 +11,11 @@ void HashTable::reHash() {
 void HashTable::deleteNote(string key) {
 	long hashIndex = hash(key);
 	it = a[hashIndex].begin();
-	
+	while (it != a[hashIndex].end()) {
+		if ((*it)->getNum() == key)
+			break;
+		it++;
+	}
 	if (it == a[hashIndex].end())
 	{
 		cout << "Такой записи нет" << endl;
@@ -104,14 +108,13 @@ HashTable::HashTable() {
 			endl << "Произвести рехеширование?(Y - да, N - нет): ";
 		cin >> Y_N;
 	}
-	if (Y_N == "Y")
-		while ((double)count/(double)sizeTable >= 0.75) // рехеширование
-		{
-			a.clear();
+	if (Y_N == "Y") {
+		while ((double)count / (double)sizeTable >= 0.75) // рехеширование
 			sizeTable *= 2;
-			a.resize(sizeTable);
-			fillingTable();
-		}
+		a.clear();
+		a.resize(sizeTable);
+		fillingTable();
+	}
 	cout << "коэффициент нагрузки хеш-таблицы = " << (double)count / (double)sizeTable << endl;
 };
 
