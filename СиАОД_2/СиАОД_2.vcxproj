@@ -139,12 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="genText.cpp" />
+    <ClCompile Include="GenFile.cpp" />
     <ClCompile Include="HashTable.cpp" />
     <ClCompile Include="СиАОД_2.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="genText.h" />
+    <ClInclude Include="GenFile.h" />
     <ClInclude Include="HashTable.h" />
     <ClInclude Include="Polis.h" />
   </ItemGroup>

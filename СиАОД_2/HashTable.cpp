@@ -10,8 +10,12 @@ void HashTable::reHash() {
 
 void HashTable::deleteNote(string key) {
 	long hashIndex = hash(key);
-	list <Polis*> ::iterator it = a[hashIndex].begin();
-	
+	it = a[hashIndex].begin();
+	while (it != a[hashIndex].end()) {
+		if ((*it)->getNum() == key)
+			break;
+		it++;
+	}
 	if (it == a[hashIndex].end())
 	{
 		cout << "Такой записи нет" << endl;
@@ -50,7 +54,7 @@ void HashTable::deleteNote(string key) {
 
 Polis* HashTable::find(string key) {
 	long hashIndex = hash(key);
-	list <Polis*> ::iterator it = a[hashIndex].begin();
+	it = a[hashIndex].begin();
 	while (it != a[hashIndex].end()) {
 		if ((*it)->getNum() == key) 
 			return (*it);
@@ -104,19 +108,17 @@ HashTable::HashTable() {
 			endl << "Произвести рехеширование?(Y - да, N - нет): ";
 		cin >> Y_N;
 	}
-	if (Y_N == "Y")
-		while ((double)count/(double)sizeTable >= 0.75) // рехеширование
-		{
-			a.clear();
+	if (Y_N == "Y") {
+		while ((double)count / (double)sizeTable >= 0.75) // рехеширование
 			sizeTable *= 2;
-			a.resize(sizeTable);
-			fillingTable();
-		}
+		a.clear();
+		a.resize(sizeTable);
+		fillingTable();
+	}
 	cout << "коэффициент нагрузки хеш-таблицы = " << (double)count / (double)sizeTable << endl;
 };
 
 void HashTable::outTable() {
-	list <Polis*> ::iterator it;
 	for (int i = 0; i < sizeTable; i++) { // пройдем весь вектор
 		if (!a[i].empty()) // если список не пуст 
 		{

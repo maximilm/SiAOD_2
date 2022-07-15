@@ -6,7 +6,7 @@
 #include "Polis.h"
 using namespace std;
 
-	void genText(int n);
-	string gen_random_dig(const int len);
-	string gen_random_b(const int len);
+	void genFile(int n);
+	string genRandomDigits(const int len);
+	string genRandomLetter(const int len);
 
